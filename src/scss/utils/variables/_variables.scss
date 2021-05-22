@@ -1,0 +1,46 @@
+// Font-family
+$font-family-poppins: 'Poppins', sans-serif;
+$font-family-roboto: 'Roboto', sans-serif;
+
+// Font-sizes
+$font-size-base: 14px;
+$h6-font-size: $font-size-base;
+$h5-font-size: 16px;
+$h4-font-size: 20px;
+$h3-font-size: 28px;
+$h2-font-size: 40px;
+$h1-font-size: 60px;
+
+// Font weight sizes
+$font-weight-map: (100, 200, 300, 400, 500, 600, 700, 800, 900);
+$font-weight-base: nth($font-weight-map, 4);
+$font-weight-bold: nth($font-weight-map, 7);
+$font-weight-bolder: bolder;
+
+// Colors
+$black: #000;
+$white: #fff;
+$grey-100: #f4f5f5;
+$grey-200: #535252;
+$grey-300: #545454;
+$grey-400: #a4a4a4;
+$grey-500: #f9f9f9;
+$green: #a1c900;
+$red-100: #ca2223;
+$red-200: #e9242e;
+$red-300: #f14b4b;
+$red-400: #bf2525;
+$red-500: #ff7d7d;
+
+// Shadows
+$box-shadow: 0 2px 5px 0 rgba($black, .15);
+
+// Others
+$line-height: 1.715;
+$spacer: $font-size-base;
+
+// Headings
+$headings-margin-bottom: $spacer / 2;
+$headings-font-family: $font-family-poppins;
+$headings-font-weight: 700;
+$headings-line-height: 1.5;

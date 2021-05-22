@@ -1,0 +1,5 @@
+@mixin heading($font-size, $font-family: $headings-font-family, $font-weight: $headings-font-weight) {
+  @include res-font($font-size);
+  font-family: $font-family;
+  font-weight: $font-weight;
+}

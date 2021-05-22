@@ -1,0 +1,64 @@
+//.year-btn {
+//  font-size: 16px;
+//  font-weight: bold;
+//  line-height: 1.38;
+//  letter-spacing: 0.34px;
+//}
+
+.btn {
+  padding: 6px 18px;
+  display: inline-block;
+  color: $white;
+  font-family: $font-family-roboto;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1;
+  cursor: pointer;
+  border: none;
+  border-radius: 25px;
+  transition: .25s;
+
+  &--green {
+    padding: 20px 15px;
+    @include res-font(20px);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: 0.43px;
+    background-color: $green;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px 0 rgba($black, .15);
+
+    &:hover,
+    &:focus {
+      background-color: lighten($green, 2);
+    }
+
+    &:active {
+      background-color: darken($green, 2);
+    }
+
+    &__big {
+      padding: 20px 40px;
+    }
+  }
+
+  &--link {
+    padding: 0;
+    color: $black;
+    text-decoration: underline;
+
+    &__red {
+      color: $red-500;
+    }
+  }
+
+  &--dark {
+    background-image: linear-gradient(to bottom, $grey-300, $black);
+    @include res-font(12px);
+  }
+
+  &--light {
+    color: $grey-400;
+    @include res-font(12px);
+  }
+}

@@ -1,0 +1,21 @@
+@mixin font-weight($font-weight) {
+  font-weight: $font-weight;
+}
+
+@mixin font-weight-populate($map) {
+  @each $breakpoint in $breakpoints-map {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    @include breakpoint($breakpoint, $breakpoints) {
+      @each $font-weight in $map {
+        .fw#{$infix}-#{$font-weight} {
+          font-weight: $font-weight;
+        }
+
+        .fw#{$infix}-#{$font-weight}-force {
+          font-weight: $font-weight !important;
+        }
+      }
+    }
+  }
+}

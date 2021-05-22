@@ -1,0 +1,13 @@
+.footer {
+  padding: 110px 0;
+  background: $red-100 no-repeat url('../img/footer2.png') center/cover;
+  color: $white;
+
+  &--title {
+    margin-bottom: 40px;
+  }
+
+  &--description {
+    margin-bottom: 60px;
+  }
+}

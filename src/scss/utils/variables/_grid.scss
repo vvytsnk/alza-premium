@@ -1,0 +1,32 @@
+$columns: 12;
+$columns-prefix: col;
+$gutter: 20px;
+
+// Styles for columns
+%global-columns-style {
+  padding-right: ($gutter / 2);
+  padding-left: ($gutter / 2);
+  min-height: 1px;
+  width: 100%;
+  position: relative;
+}
+
+// Grid breakpoints
+$breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px
+);
+
+// Container widths
+$container-widths: (
+        xs: 100%,
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1100px
+);
+
+$breakpoints-map: map_keys($breakpoints);

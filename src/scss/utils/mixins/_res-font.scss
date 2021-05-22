@@ -1,0 +1,12 @@
+@mixin res-font($font-size) {
+  @if (remove-unit($font-size - $font-size-base) > 0) {
+    font-size: calc((100vw - 300px) / (1200 - 300) * (#{remove-unit($font-size - $font-size-base)}) + #{$font-size-base});
+
+    @include breakpoint('xl') {
+      font-size: $font-size;
+    }
+  } @else {
+    font-size: $font-size;
+  }
+}
+

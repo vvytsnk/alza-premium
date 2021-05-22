@@ -1,0 +1,73 @@
+$alignArr: 'baseline', 'center', 'flex-end', 'flex-start';
+$alignSelfArr: 'auto', 'baseline', 'center', 'flex-end', 'flex-start';
+$justifyArr: 'baseline', 'center', 'flex-end', 'flex-start', 'space-between', 'space-around';
+$directionArr: 'row', 'row-reverse', 'column', 'column-reverse';
+$flexWrap: 'wrap', 'wrap-reverse', 'nowrap';
+
+.align {
+  @each $breakpoint in $breakpoints-map {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    @include breakpoint($breakpoint, $breakpoints) {
+      @each $prop in $alignArr {
+        &-#{$prop}#{$infix} {
+          align-items: #{$prop} !important;
+        }
+      }
+    }
+  }
+
+  &-self {
+    @each $breakpoint in $breakpoints-map {
+      $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+      @include breakpoint($breakpoint, $breakpoints) {
+        @each $prop in $alignArr {
+          &-#{$prop}#{$infix} {
+            align-self: #{$prop} !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.justify {
+  @each $breakpoint in $breakpoints-map {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    @include breakpoint($breakpoint, $breakpoints) {
+      @each $prop in $justifyArr {
+        &-#{$prop}#{$infix} {
+          justify-content: #{$prop} !important;
+        }
+      }
+    }
+  }
+}
+
+.flex {
+  @each $breakpoint in $breakpoints-map {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    @include breakpoint($breakpoint, $breakpoints) {
+      @each $prop in $directionArr {
+        &-#{$prop}#{$infix} {
+          flex-direction: #{$prop} !important;
+        }
+      }
+    }
+  }
+
+  @each $breakpoint in $breakpoints-map {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    @include breakpoint($breakpoint, $breakpoints) {
+      @each $prop in $flexWrap {
+        &-#{$prop}#{$infix} {
+          flex-wrap: #{$prop} !important;
+        }
+      }
+    }
+  }
+}

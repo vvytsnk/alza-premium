@@ -1,0 +1,37 @@
+.calculate-section {
+  padding-top: 100px;
+  padding-bottom: 120px;
+  color: $white;
+  background: $red-100 no-repeat url('../img/bg_vyhody.jpg') center/cover;
+
+  &--header {
+    margin-bottom: 40px;
+  }
+
+  &--btn-wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+    padding: 2px;
+    width: 100%;
+    max-width: 228px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $white;
+    border-radius: 25px;
+
+  }
+
+  .btn--description {
+    margin-bottom: 40px;
+  }
+
+  .calculate--card-body {
+    &-title {
+      .price {
+        @include res-font(20px);
+      }
+    }
+  }
+}
+

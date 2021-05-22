@@ -1,0 +1,49 @@
+.header {
+  padding-top: 55px;
+  padding-bottom: 35px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: $white;
+  background: $red-100 no-repeat url('../img/main-bg.jpg') center/cover;
+  position: relative;
+  @include breakpoint('lg') {
+    padding-top: 110px;
+  }
+
+  &:after {
+    content: '';
+    border-left: 23px solid transparent;
+    border-right: 23px solid transparent;
+    border-top: 22px solid $red-100;
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &--logo {
+    margin-bottom: 55px;
+  }
+
+  &--title-wrapper {
+    margin-bottom: 50px;
+  }
+
+  &--cta-btn-wrapper {
+    margin-bottom: 20px;
+  }
+
+  &--coupon-btn-wrapper {
+    padding-bottom: 40px;
+  }
+
+  &--description {
+    color: $red-500;
+  }
+
+  .container {
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+}

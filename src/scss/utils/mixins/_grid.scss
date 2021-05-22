@@ -1,0 +1,56 @@
+@mixin column() {
+  & {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+
+  @for $i from 1 through $columns {
+    &-#{$i} {
+      $width-calc: (100 / $columns * $i)#{'%'};
+      max-width: $width-calc;
+      $flex-calc: (100 / $columns * $i)#{'%'};
+      flex: 0 0 $flex-calc;
+    }
+  }
+}
+
+@mixin offset-column() {
+  @for $i from 0 through $columns {
+    &-offset-#{$i} {
+      margin-left: (100 / $columns * $i)#{if($i>0, '%', '')};
+    }
+  }
+}
+
+@mixin grid-column($breakpoint) {
+  .#{$breakpoint} {
+    @include column();
+    @include offset-column();
+  }
+}
+
+@mixin column-ordering($breakpoint) {
+  @for $i from 1 through $columns {
+    .order#{$breakpoint}-#{$i} {
+      order: $i;
+    }
+  }
+}
+
+@mixin grid-columns($breakpoints-map, $breakpoints, $columns) {
+  @each $breakpoint in $breakpoints-map {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    @for $i from 0 through $columns {
+      .#{$columns-prefix}#{$infix}#{if($i>0, -#{$i}, '')} {
+        @extend %global-columns-style;
+      }
+    }
+
+    @include breakpoint($breakpoint, $breakpoints) {
+      @include grid-column('#{$columns-prefix}#{$infix}');
+      @include column-ordering($infix);
+    }
+  }
+}

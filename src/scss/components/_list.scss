@@ -1,0 +1,30 @@
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .icon {
+    margin: 2px;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    background: no-repeat url('../img/icons.png');
+    background-size: cover;
+
+    &-facebook {
+      background-position-x: 0;
+    }
+
+    &-twitter {
+      background-position-x: -54px;
+    }
+
+    &-mail {
+      background-position-x: -108px;
+    }
+
+    &-linkedin {
+      background-position-x: -162px;
+    }
+  }
+}

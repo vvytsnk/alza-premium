@@ -1,0 +1,19 @@
+@mixin container-styles() {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: ($gutter / 2);
+  padding-left: ($gutter / 2);
+  width: 100%;
+}
+
+.container {
+  @include container-styles();
+  @include container();
+}
+
+.row {
+  margin-right: -($gutter / 2);
+  margin-left: -($gutter / 2);
+  display: flex;
+  flex-wrap: wrap;
+}

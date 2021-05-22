@@ -1,0 +1,15 @@
+$propVal: 'flex', 'inline-flex', 'inline-block', 'block', 'none';
+
+.d {
+  @each $breakpoint in $breakpoints-map {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    @include breakpoint($breakpoint, $breakpoints) {
+      @each $prop in $propVal {
+        &-#{$prop}#{$infix} {
+          display: #{$prop} !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+.card {
+  margin-bottom: 20px;
+  padding-top: 25px;
+  background-color: $white;
+  border-radius: 4px;
+  box-shadow: $box-shadow;
+  overflow: hidden;
+
+  &__no-bg {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  &--image {
+    margin-right: auto;
+    margin-bottom: 15px;
+    margin-left: auto;
+    height: 64px;
+    width: auto;
+    line-height: 64px;
+  }
+
+  &--header {
+    position: relative;
+
+    &__p-top {
+      padding-top: 20px;
+    }
+
+    &-title {
+      margin-bottom: 0;
+    }
+
+    p {
+      color: $red-200;
+    }
+
+    &-promo {
+      height: 135px;
+      width: 135px;
+      display: flex;
+      background-image: linear-gradient(to bottom, $red-300, $red-400);
+      border: solid 1px #707070;
+      position: absolute;
+      top: -25px;
+      right: 0;
+      transform: translate(50%, -50%) rotate(45deg);
+
+      p {
+        margin: auto auto 5px;
+        color: $white;
+        line-height: 18px;
+      }
+    }
+  }
+
+  &--body {
+    &-title,
+    &-description {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    &-title {
+      margin-bottom: 15px;
+    }
+
+    &-description {
+      padding-bottom: 5px;
+      color: $grey-200;
+    }
+  }
+
+  &--list {
+    li {
+      padding-top: 7px;
+      padding-bottom: 7px;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    &__bg li:nth-of-type(odd) {
+      background-color: $grey-500;
+    }
+  }
+
+  &--footer {
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+  }
+}

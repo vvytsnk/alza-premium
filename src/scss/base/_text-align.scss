@@ -1,0 +1,15 @@
+$textAlignArr: 'center', 'left', 'right', 'justify';
+
+.text {
+  @each $breakpoint in $breakpoints-map {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    @include breakpoint($breakpoint, $breakpoints) {
+      @each $prop in $textAlignArr {
+        &-#{$prop}#{$infix} {
+          text-align: #{$prop};
+        }
+      }
+    }
+  }
+}
